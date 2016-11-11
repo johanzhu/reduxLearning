@@ -1,0 +1,9 @@
+{
+  "generator-react-webpack": {
+    "appName": "reduxcrazy",
+    "style": "css",
+    "cssmodules": false,
+    "postcss": true,
+    "generatedWithVersion": 4
+  }
+}

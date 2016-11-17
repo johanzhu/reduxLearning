@@ -9,8 +9,8 @@ import React, {
   PropTypes
 } from 'react';
 import {
-  increment,
-  decrement
+  showBeijing,
+  showData
 } from '../actions/';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
@@ -18,8 +18,24 @@ import Main from '../components/App';
 /* Populated by react-webpack-redux:reducer */
 class App extends Component {
   render() {
-    const {actions, counter} = this.props;
-    return <Main actions={actions} counter={counter}/>;
+    const {actions, getData} = this.props;
+    return (
+      <Main
+        cityName={getData.cityName}
+        weather={getData.weather}
+        tem={getData.tem}
+        hu={getData.hu}
+        wind={getData.wind}
+        cloth={getData.cloth}
+        cold={getData.cold}
+        con={getData.con}
+        car={getData.car}
+        sport={getData.sport}
+        light={getData.light}
+        showBeijing={actions.showBeijing}
+        showData={actions.showData}
+      />
+    );
   }
 }
 /* Populated by react-webpack-redux:reducer
@@ -29,19 +45,19 @@ class App extends Component {
  */
 App.propTypes = {
   actions: PropTypes.object.isRequired,
-  counter: PropTypes.object.isRequired
+  getData: PropTypes.object.isRequired
 };
 function mapStateToProps(state) {
   // eslint-disable-line no-unused-vars
   /* Populated by react-webpack-redux:reducer */
-  const props = { value: state.counter.number };
+  const props = { getData: state.getData };
   return props;
 }
 function mapDispatchToProps(dispatch) {
   /* Populated by react-webpack-redux:action */
   const actions = {
-    increment,
-    decrement
+    showBeijing,
+    showData
   };
   const actionMap = { actions: bindActionCreators(actions, dispatch) };
   return actionMap;

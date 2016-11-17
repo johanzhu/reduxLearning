@@ -5,10 +5,10 @@ Allows to import actions like so:
 import {action1, action2} from '../actions/'
 */
 /* Populated by react-webpack-redux:action */
-import decrement from '../actions/decrement.js';
-import increment from '../actions/increment.js';
+import showData from '../actions/showData.js';
+import showBeijing from '../actions/showBeijing.js';
 const actions = {
-  increment,
-  decrement
+  showBeijing,
+  showData
 };
 module.exports = actions;

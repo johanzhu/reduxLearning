@@ -1,3 +1,3 @@
 /* Populated by react-webpack-redux:action */
-export const INCREMENT = 'INCREMENT';
-export const DECREMENT = 'DECREMENT';
+export const SHOW_BEIJING = 'SHOW_BEIJING';
+export const SHOW_DATA = 'SHOW_DATA';

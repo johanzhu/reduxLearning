@@ -94,14 +94,16 @@ class WebpackBaseConfig {
             test: /\.cssmodule\.css$/,
             loaders: [
               'style',
-              'css?modules&importLoaders=1&localIdentName=[name]-[local]-[hash:base64:5]'
+              'css?modules&importLoaders=1&localIdentName=[name]-[local]-[hash:base64:5]',
+              'postcss'
             ]
           },
           {
             test: /^.((?!cssmodule).)*\.css$/,
             loaders: [
               'style',
-              'css'
+              'css',
+              'postcss'
             ]
           },
           {
@@ -109,7 +111,8 @@ class WebpackBaseConfig {
             loaders: [
               'style',
               'css?modules&importLoaders=1&localIdentName=[name]-[local]-[hash:base64:5]',
-              'sass'
+              'sass',
+              'postcss'
             ]
           },
           {
@@ -117,7 +120,8 @@ class WebpackBaseConfig {
             loaders: [
               'style',
               'css',
-              'sass'
+              'sass',
+              'postcss'
             ]
           },
           {
@@ -125,7 +129,8 @@ class WebpackBaseConfig {
             loaders: [
               'style',
               'css?modules&importLoaders=1&localIdentName=[name]-[local]-[hash:base64:5]',
-              'less'
+              'less',
+              'postcss'
             ]
           },
           {
@@ -133,7 +138,8 @@ class WebpackBaseConfig {
             loaders: [
               'style',
               'css',
-              'less'
+              'less',
+              'postcss'
             ]
           },
           {
@@ -141,7 +147,8 @@ class WebpackBaseConfig {
             loaders: [
               'style',
               'css?modules&importLoaders=1&localIdentName=[name]-[local]-[hash:base64:5]',
-              'stylus'
+              'stylus',
+              'postcss'
             ]
           },
           {
@@ -149,7 +156,8 @@ class WebpackBaseConfig {
             loaders: [
               'style',
               'css',
-              'stylus'
+              'stylus',
+              'postcss'
             ]
           },
           {
@@ -169,6 +177,9 @@ class WebpackBaseConfig {
             loaders: ['react-hot', 'babel']
           }
         ]
+      },
+      postcss: function () {
+        return [require('autoprefixer')];
       },
       output: {
         path: path.resolve('./dist/assets'),

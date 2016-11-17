@@ -8,7 +8,7 @@
  */
 /* Populated by react-webpack-redux:reducer */
 import { combineReducers } from 'redux';
-import counter from '../reducers/counter.js';
-const reducers = { counter };
+import getData from '../reducers/getData.js';
+const reducers = { getData };
 const combined = combineReducers(reducers);
 module.exports = combined;
